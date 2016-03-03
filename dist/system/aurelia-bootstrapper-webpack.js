@@ -1,4 +1,4 @@
-System.register(['aurelia-pal-browser', 'aurelia-loader-webpack'], function (_export) {
+System.register(['aurelia-polyfills', 'aurelia-pal-browser', 'aurelia-loader-webpack'], function (_export) {
   'use strict';
 
   var initialize, WebpackLoader, bootstrapQueue, sharedLoader, Aurelia;
@@ -88,7 +88,7 @@ System.register(['aurelia-pal-browser', 'aurelia-loader-webpack'], function (_ex
   }
 
   return {
-    setters: [function (_aureliaPalBrowser) {
+    setters: [function (_aureliaPolyfills) {}, function (_aureliaPalBrowser) {
       initialize = _aureliaPalBrowser.initialize;
     }, function (_aureliaLoaderWebpack) {
       WebpackLoader = _aureliaLoaderWebpack.WebpackLoader;

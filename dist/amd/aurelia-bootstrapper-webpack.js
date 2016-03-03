@@ -1,4 +1,4 @@
-define(['exports', 'aurelia-pal-browser', 'aurelia-loader-webpack'], function (exports, _aureliaPalBrowser, _aureliaLoaderWebpack) {
+define(['exports', 'aurelia-polyfills', 'aurelia-pal-browser', 'aurelia-loader-webpack'], function (exports, _aureliaPolyfills, _aureliaPalBrowser, _aureliaLoaderWebpack) {
   'use strict';
 
   exports.__esModule = true;

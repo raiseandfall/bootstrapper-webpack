@@ -1,4 +1,5 @@
 declare module 'aurelia-bootstrapper-webpack' {
+  import 'aurelia-polyfills';
   import { initialize }  from 'aurelia-pal-browser';
   import { WebpackLoader }  from 'aurelia-loader-webpack';
   

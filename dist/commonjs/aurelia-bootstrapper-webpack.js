@@ -3,6 +3,8 @@
 exports.__esModule = true;
 exports.bootstrap = bootstrap;
 
+require('aurelia-polyfills');
+
 var _aureliaPalBrowser = require('aurelia-pal-browser');
 
 var _aureliaLoaderWebpack = require('aurelia-loader-webpack');
