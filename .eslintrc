@@ -1,0 +1,5 @@
+{
+  "extends": "./node_modules/aurelia-tools/.eslintrc",
+  "rules": {
+  }
+}
