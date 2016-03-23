@@ -20,10 +20,10 @@
     "url": "http://github.com/aurelia/bootstrapper-webpack"
   },
   "dependencies": {
-    "aurelia-loader-webpack": "^0.1.2",
-    "aurelia-pal": "^1.0.0-beta.1.1.1",
-    "aurelia-pal-browser": "^1.0.0-beta.1.1.4",
-    "aurelia-polyfills": "^1.0.0-beta.1.0.1"
+    "aurelia-loader-webpack": "^1.0.0-beta.1.0.0",
+    "aurelia-pal": "^1.0.0-beta.1.2.0",
+    "aurelia-pal-browser": "^1.0.0-beta.1.2.0",
+    "aurelia-polyfills": "^1.0.0-beta.1.1.0"
   },
   "devDependencies": {
     "aurelia-tools": "^0.1.12",
