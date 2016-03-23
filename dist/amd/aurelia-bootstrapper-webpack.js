@@ -1,8 +1,11 @@
-define(['exports', 'aurelia-polyfills', 'aurelia-pal-browser', 'aurelia-loader-webpack'], function (exports, _aureliaPolyfills, _aureliaPalBrowser, _aureliaLoaderWebpack) {
+define(['exports', 'aurelia-pal-browser', 'aurelia-loader-webpack', 'aurelia-polyfills'], function (exports, _aureliaPalBrowser, _aureliaLoaderWebpack) {
   'use strict';
 
-  exports.__esModule = true;
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
   exports.bootstrap = bootstrap;
+
 
   var bootstrapQueue = [];
   var sharedLoader = null;
@@ -64,19 +67,19 @@ define(['exports', 'aurelia-polyfills', 'aurelia-pal-browser', 'aurelia-loader-w
 
   function run() {
     return ready(window).then(function (doc) {
-      _aureliaPalBrowser.initialize();
+      (0, _aureliaPalBrowser.initialize)();
 
       var appHost = doc.querySelectorAll('[aurelia-app]');
       var loader = new _aureliaLoaderWebpack.WebpackLoader();
       loader.loadModule('aurelia-framework').then(function (m) {
         Aurelia = m.Aurelia;
         for (var i = 0, ii = appHost.length; i < ii; ++i) {
-          handleApp(loader, appHost[i])['catch'](console.error.bind(console));
+          handleApp(loader, appHost[i]).catch(console.error.bind(console));
         }
 
         sharedLoader = loader;
-        for (var i = 0, ii = bootstrapQueue.length; i < ii; ++i) {
-          bootstrapQueue[i]();
+        for (var _i = 0, _ii = bootstrapQueue.length; _i < _ii; ++_i) {
+          bootstrapQueue[_i]();
         }
         bootstrapQueue = null;
       });

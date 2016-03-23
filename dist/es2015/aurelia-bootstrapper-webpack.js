@@ -1,6 +1,6 @@
 import 'aurelia-polyfills';
-import {initialize} from 'aurelia-pal-browser';
-import {WebpackLoader} from 'aurelia-loader-webpack';
+import { initialize } from 'aurelia-pal-browser';
+import { WebpackLoader } from 'aurelia-loader-webpack';
 
 let bootstrapQueue = [];
 let sharedLoader = null;
@@ -51,9 +51,7 @@ function config(loader, appHost, configModuleId) {
     return loader.loadModule(configModuleId).then(customConfig => customConfig.configure(aurelia));
   }
 
-  aurelia.use
-    .standardConfiguration()
-    .developmentLogging();
+  aurelia.use.standardConfiguration().developmentLogging();
 
   return aurelia.start().then(() => aurelia.setRoot());
 }
@@ -79,12 +77,7 @@ function run() {
   });
 }
 
-/**
- * Manually bootstraps an application.
- * @param configure A callback which passes an Aurelia instance to the developer to manually configure and start up the app.
- * @return A Promise that completes when configuration is done.
- */
-export function bootstrap(configure: Function): Promise<void> {
+export function bootstrap(configure) {
   return onBootstrap(loader => {
     const aurelia = new Aurelia(loader);
     return configure(aurelia);
