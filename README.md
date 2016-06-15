@@ -3,6 +3,7 @@
 [![npm Version](https://img.shields.io/npm/v/aurelia-bootstrapper-webpack.svg)](https://www.npmjs.com/package/aurelia-bootstrapper-webpack)
 [![ZenHub](https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)](https://zenhub.io)
 [![Join the chat at https://gitter.im/aurelia/discuss](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aurelia/discuss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![CircleCI](https://circleci.com/gh/aurelia/bootstrapper-webpack.svg?style=shield)](https://circleci.com/gh/aurelia/bootstrapper-webpack)
 
 This library is part of the [Aurelia](http://www.aurelia.io/) platform and contains a bootstrapper, for use with Webpack, which sets up the default configuration for the Aurelia framework and gets you up and running quick and easy.
 
