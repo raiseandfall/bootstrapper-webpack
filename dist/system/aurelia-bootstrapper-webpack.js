@@ -1,6 +1,8 @@
 'use strict';
 
 System.register(['aurelia-polyfills', 'aurelia-pal-browser', 'aurelia-loader-webpack'], function (_export, _context) {
+  "use strict";
+
   var initialize, WebpackLoader, bootstrapQueue, sharedLoader, Aurelia;
 
 

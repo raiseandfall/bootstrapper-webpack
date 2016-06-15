@@ -54,7 +54,6 @@
     "gulp-typedoc-extractor": "^0.0.8",
     "gulp-typescript": "^2.13.6",
     "gulp-util": "^3.0.7",
-    "karma-babel-preprocessor": "^6.0.1",
     "merge2": "^1.0.2",
     "object.assign": "^4.0.3",
     "require-dir": "^0.3.0",
