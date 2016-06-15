@@ -15,7 +15,6 @@ dependencies:
     - npm install -g jspm
   override:
     - npm install
-    - jspm install
 
 test:
   override:
