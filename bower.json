@@ -19,5 +19,11 @@
   "repository": {
     "type": "git",
     "url": "http://github.com/aurelia/bootstrapper-webpack"
+  },
+  "dependencies": {
+    "aurelia-loader-webpack": "^1.0.0-rc.1.0.0",
+    "aurelia-pal": "^1.0.0-rc.1.0.0",
+    "aurelia-pal-browser": "^1.0.0-rc.1.0.0",
+    "aurelia-polyfills": "^1.0.0-rc.1.0.0"
   }
 }
