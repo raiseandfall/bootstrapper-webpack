@@ -1,6 +1,7 @@
 import 'aurelia-polyfills';
 import {initialize} from 'aurelia-pal-browser';
 import {WebpackLoader} from 'aurelia-loader-webpack';
+initialize();
 
 let bootstrapQueue = [];
 let sharedLoader = null;
@@ -61,8 +62,6 @@ function config(loader, appHost, configModuleId) {
 
 function run() {
   return ready(window).then(doc => {
-    initialize();
-
     const appHost = doc.querySelectorAll('[aurelia-app]');
     const loader = new WebpackLoader();
     loader.loadModule('aurelia-framework').then(m => {
