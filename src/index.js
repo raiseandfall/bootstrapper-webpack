@@ -1,6 +1,7 @@
 import 'aurelia-polyfills';
 import {initialize} from 'aurelia-pal-browser';
 import {WebpackLoader} from 'aurelia-loader-webpack';
+initialize();
 
 let bootstrapQueue = [];
 let sharedLoader = null;
@@ -46,6 +47,7 @@ function handleApp(loader, appHost) {
 function config(loader, appHost, configModuleId) {
   const aurelia = new Aurelia(loader);
   aurelia.host = appHost;
+  aurelia.configModuleId = configModuleId || null;
 
   if (configModuleId) {
     return loader.loadModule(configModuleId).then(customConfig => customConfig.configure(aurelia));
@@ -60,8 +62,6 @@ function config(loader, appHost, configModuleId) {
 
 function run() {
   return ready(window).then(doc => {
-    initialize();
-
     const appHost = doc.querySelectorAll('[aurelia-app]');
     const loader = new WebpackLoader();
     loader.loadModule('aurelia-framework').then(m => {
