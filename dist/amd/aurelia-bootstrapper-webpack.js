@@ -7,6 +7,8 @@ define(['exports', 'aurelia-pal-browser', 'aurelia-loader-webpack', 'aurelia-pol
   exports.bootstrap = bootstrap;
 
 
+  (0, _aureliaPalBrowser.initialize)();
+
   var bootstrapQueue = [];
   var sharedLoader = null;
   var Aurelia = null;
@@ -51,6 +53,7 @@ define(['exports', 'aurelia-pal-browser', 'aurelia-loader-webpack', 'aurelia-pol
   function config(loader, appHost, configModuleId) {
     var aurelia = new Aurelia(loader);
     aurelia.host = appHost;
+    aurelia.configModuleId = configModuleId || null;
 
     if (configModuleId) {
       return loader.loadModule(configModuleId).then(function (customConfig) {
@@ -67,8 +70,6 @@ define(['exports', 'aurelia-pal-browser', 'aurelia-loader-webpack', 'aurelia-pol
 
   function run() {
     return ready(window).then(function (doc) {
-      (0, _aureliaPalBrowser.initialize)();
-
       var appHost = doc.querySelectorAll('[aurelia-app]');
       var loader = new _aureliaLoaderWebpack.WebpackLoader();
       loader.loadModule('aurelia-framework').then(function (m) {

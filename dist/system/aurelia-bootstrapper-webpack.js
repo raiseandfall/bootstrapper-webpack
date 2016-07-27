@@ -46,6 +46,7 @@ System.register(['aurelia-polyfills', 'aurelia-pal-browser', 'aurelia-loader-web
   function config(loader, appHost, configModuleId) {
     var aurelia = new Aurelia(loader);
     aurelia.host = appHost;
+    aurelia.configModuleId = configModuleId || null;
 
     if (configModuleId) {
       return loader.loadModule(configModuleId).then(function (customConfig) {
@@ -62,8 +63,6 @@ System.register(['aurelia-polyfills', 'aurelia-pal-browser', 'aurelia-loader-web
 
   function run() {
     return ready(window).then(function (doc) {
-      initialize();
-
       var appHost = doc.querySelectorAll('[aurelia-app]');
       var loader = new WebpackLoader();
       loader.loadModule('aurelia-framework').then(function (m) {
@@ -81,6 +80,15 @@ System.register(['aurelia-polyfills', 'aurelia-pal-browser', 'aurelia-loader-web
     });
   }
 
+  function bootstrap(configure) {
+    return onBootstrap(function (loader) {
+      var aurelia = new Aurelia(loader);
+      return configure(aurelia);
+    });
+  }
+
+  _export('bootstrap', bootstrap);
+
   return {
     setters: [function (_aureliaPolyfills) {}, function (_aureliaPalBrowser) {
       initialize = _aureliaPalBrowser.initialize;
@@ -88,18 +96,12 @@ System.register(['aurelia-polyfills', 'aurelia-pal-browser', 'aurelia-loader-web
       WebpackLoader = _aureliaLoaderWebpack.WebpackLoader;
     }],
     execute: function () {
+
+      initialize();
+
       bootstrapQueue = [];
       sharedLoader = null;
       Aurelia = null;
-      function bootstrap(configure) {
-        return onBootstrap(function (loader) {
-          var aurelia = new Aurelia(loader);
-          return configure(aurelia);
-        });
-      }
-
-      _export('bootstrap', bootstrap);
-
       run();
     }
   };

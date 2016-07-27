@@ -11,6 +11,8 @@ var _aureliaPalBrowser = require('aurelia-pal-browser');
 
 var _aureliaLoaderWebpack = require('aurelia-loader-webpack');
 
+(0, _aureliaPalBrowser.initialize)();
+
 var bootstrapQueue = [];
 var sharedLoader = null;
 var Aurelia = null;
@@ -55,6 +57,7 @@ function handleApp(loader, appHost) {
 function config(loader, appHost, configModuleId) {
   var aurelia = new Aurelia(loader);
   aurelia.host = appHost;
+  aurelia.configModuleId = configModuleId || null;
 
   if (configModuleId) {
     return loader.loadModule(configModuleId).then(function (customConfig) {
@@ -71,8 +74,6 @@ function config(loader, appHost, configModuleId) {
 
 function run() {
   return ready(window).then(function (doc) {
-    (0, _aureliaPalBrowser.initialize)();
-
     var appHost = doc.querySelectorAll('[aurelia-app]');
     var loader = new _aureliaLoaderWebpack.WebpackLoader();
     loader.loadModule('aurelia-framework').then(function (m) {
