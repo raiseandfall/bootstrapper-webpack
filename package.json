@@ -1,6 +1,6 @@
 {
   "name": "aurelia-bootstrapper-webpack",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Sets up the default configuration for the aurelia framework and gets you up and running quick and easy.",
   "keywords": [
     "aurelia",
@@ -21,7 +21,7 @@
     "url": "http://github.com/aurelia/bootstrapper-webpack"
   },
   "dependencies": {
-    "aurelia-loader-webpack": "^1.0.0",
+    "aurelia-loader-webpack": "aurelia/loader-webpack#experimental-release",
     "aurelia-pal": "^1.0.0",
     "aurelia-pal-browser": "^1.0.0",
     "aurelia-polyfills": "^1.0.0"
